@@ -1,31 +1,64 @@
 @charset "utf-8";
 @import url(normalize.css);
-
-/* 웹카페 레이아웃*/
+/* 박스 공통 */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+/* 모바일 레이아웃 */
 .header, .navigation, .main, .footer{
-  width: 1000px;
-  margin: 0 auto;
-  background: yellow;
+  width: 100%;
 }
-/* 헤더 */
+/*모바일 헤더*/
 .header{
-  height: 10vh; /*vh=화면의 1/10만큼*/
-}
-/*내비게이션*/
-.nav-container{
-  background-color: #988574;
-}
-.navigation{
+  background: lime;
   height: 10vh;
 }
-/*메인*/
+/*모바일 내비게이션*/
+.navigation{
+  background: aqua;
+  height: 10vh;
+}
 .main{
+  background: orange;
   height: 70vh;
 }
-/*푸터*/
-.footer-container{
-  background-color: #988574;
-}
 .footer{
-  height:10vh;
+  background: violet;
+  height: 10vh;
+}
+body{
+  background-color: pink;
+ }
+@media screen and (min-width: 1000px) {
+  /* 웹카페 데스크탑 레이아웃*/
+  .header,
+  .navigation,
+  .main,
+  .footer {
+    width: 1000px;
+    margin: 0 auto;
+    background: yellow;
+  }
+  /* 데스크탑 헤더 */
+  .header {
+    height: 10vh; /*vh=화면의 1/10만큼*/
+  }
+  /*데스크탑 내비게이션*/
+  .nav-container {
+    background-color: #988574;
+  }
+  .navigation {
+    height: 10vh;
+  }
+  /*데스크탑 메인*/
+  .main {
+    height: 70vh;
+  }
+  /*데스크탑 푸터*/
+  .footer-container {
+    background-color: #988574;
+  }
+  .footer {
+    height: 10vh;
+  }
 }
