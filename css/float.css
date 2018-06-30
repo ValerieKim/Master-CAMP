@@ -1,0 +1,79 @@
+@charset "utf-8";
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+.header, .main, .footer{
+  width: 1000px;
+  margin: 0 auto;
+}
+.header{
+  background-color: lime;
+}
+/* 메인 콘텐츠 레이아웃*/
+.main{
+  background:yellow;
+  /*height: 600px;* 추천하지 않는 방식 유동적인 컨텐츠에 불가능/
+  background-color: yellow;
+  /*overflow: hidden;*/
+}
+.main::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.recommend-book{
+  background-color: pink;
+  width: 320px;
+  float: left;
+  margin-right: 20px;
+}
+.news{
+  background-color: orange;
+  width: 660px;
+  float: right;
+}
+.board{
+  background-color: olive;
+  width: 320px;
+  float: left;
+}
+.favorite-site{
+  background-color: violet;
+  width: 235px;
+  float: right;
+  margin-left: 20px;
+}
+.twitter{
+  width: 405px;
+  background-color: skyblue;
+  float: left;
+  margin-left: 20px;
+}
+.footer{
+  background-color: lime;
+}
+
+.box{
+  width: 500px;
+  background: yellow;
+  border: 5px solid red;
+  font-size: 20px;
+}
+.box1{
+  background: rgba(0,255,0,0.2);
+  float: right;
+}
+.box3{
+  background: rgba(255,0,0,0.5);
+  float: right;
+}
+.box4{
+  width: 300px;
+  background-color: pink;
+  float: left;
+}
+.box2{
+  background: rgba(0,0,255,0.5);
+}
