@@ -1,0 +1,47 @@
+@charset "utf-8";
+.note{
+  width: 560px;
+  background-color: blue;
+}
+.box1{
+  width: 500px;
+  padding: 20px;
+  border: 5px solid #000;
+  background: yellow;
+  position: relative;
+  top: -5px;
+  left: -5px;
+}
+.note2{
+  background-color: red;
+  height: 200px;
+  width: 600px;
+  position:relative;
+}
+.box2{
+  background-color: lime;
+  /*margin: 0;*/
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 50px;
+}
+.fix{
+  background: pink;
+  width: 200px;
+  height: 100px;
+  margin: 0;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+}
+.stic{
+  background-color: orange;
+  margin: 0;
+  position: sticky;
+  top:0;
+  z-index: 10;
+}
