@@ -59,6 +59,21 @@ body{
   color: #181818;
   font-family: 'Noto Sans Regular', sans-serif;
 }
+
+/* 가상 요소를 활용한 그리드 설정 */
+/*body::after{
+  content: "가상요소를 활용하여 추가한 텍스트";
+  background: repeating-linear-gradient(to right, rgba(255,0,0,0.5), rgba(255,0,0,0.5) 65px, transparent 65px, transparent 85px),
+  repeating-linear-gradient(to bottom, rgba(0,0,255,0.5), rgba(0,0,255,0.5) 1px, transparent 1px, transparent 16px);
+  background-color: transparent;
+  color: #fff;
+  width: 1000px;
+  height: 100vh;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+}*/
 /* 공통 레이아웃 */
 .header, .navigation, .main, .footer{
   width: 100%;
@@ -98,6 +113,24 @@ body{
   height: 10vh;
 }
 @media screen and (max-width: 999px){
+  /* 모바일 그리드 설정 - 4col */
+  .grid-show{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: 0px repeat(4, 1fr) 0px;
+    grid-template-rows: 100vh;
+    grid-column-gap: 20px;
+  }
+  .grid-show .grid-unit:nth-child(1),
+  .grid-show .grid-unit:nth-child(6){
+    width: 0;
+  }
+  .grid-show .grid-unit{
+    background-color: rgba(0,0,255,0.5);
+  }
   /* 모바일 헤더 */
 
   /* 모바일 내비게이션 */
@@ -117,6 +150,21 @@ body{
 
 
 @media screen and (min-width: 1000px) {
+
+  /* 데스크탑 그리드 - 12col */
+  .grid-show{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(12, 65px);
+    grid-template-rows: 100vh;
+    grid-column-gap: 20px;
+  }
+  .grid-show .grid-unit{
+    background-color: rgba(255,0,0,0.5);
+  }
   /* 웹카페 데스크탑 레이아웃*/
   .header,
   .navigation,
