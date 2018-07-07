@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>form 관련 요소</title>
+</head>
+<body>
+  <h1>form 요소에 관하여</h1>
+  <form id="form1" action="https::formspree.io/behuman@gmail.com" method="POST">
+    <fieldset>
+      <legend>폼 서식</legend>
+      <p>
+        <label for="user-name">성명</label>
+        <input type="text" id="user-name" name="name" form="form1">
+      </p>
+      <p>
+      <label for="user-pw">암호</label>
+      <input type="password" id="user-pw" name="pwd">
+      </p>
+      <p>
+        성별<br>
+        <label for="female">여자</label>
+        <input type="radio" id="female" value="여자" name="gender" checked>
+        <label for="female">남자</label>
+        <input type="radio" id="male" value="남자" name="gender">
+      </p>
+      <p>
+        관심분야<br>
+        <label for="html">HTML</label>
+        <input type="checkbox" id="html" value="HTML" name="programming" checked>
+        <label for="css">CSS</label>
+        <input type="checkbox" id="css" value="CSS" name="programming" checked>
+      </p>
+      <p>
+        <label for="user-email">이메일</label>
+        <input type="email" id="user-email" name="email" required>
+      </p>
+      <p>
+        <label for="">전화번호</label>
+        <input type="tel" id="user-tel" name="tel"> <!--모바일에서는 숫자키만뜬다-->
+      </p>
+      <p>
+        <label for="">달력</label>
+        <input type="month" id="calender" name="calender">
+      </p>
+      <p>
+      <input type="search" autofocus list="search-suggestions" placeholder="목록에서 선택하세요"/>
+        <datalist id="search-suggestions">
+          <option label="DM" value="Depeche Mode">
+          <option label="Moz" value="Morrissey">
+          <option label="NO" value="New Order">
+          <option label="TC" value="The Cure">
+        </datalist>
+      </p>
+      <p>
+        <label for="">포트폴리오 url</label>
+        <input type="url" id="url" name="porfolio" required />
+      </p>
+      <p>
+        <label for="">주문수량</label>
+        <input type="number" min="5" max="100" step="5" id="order"/>
+      </p>
+      <p>
+        <label for="service">추천 서비스</label>
+        <select name="service" id="service">
+          <option value="무료배송">무료배송</option>
+          <option value="사은품증정">사은품증정</option>
+          <option value="이벤트응모">이벤트응모</option>
+        </select>
+      </p>
+      <p>
+        <label for="message">문의 사항</label>
+        <textarea name="" id="message" cols="30" rows="10" placeholder="문의사항을 남겨주세요."></textarea>
+        <!--placeholder 동작하지 않음-->
+      </p>
+      <button type="submit">전송</button>
+      <button type="reset">초기화</button>
+      <button type="button">Click Me</button>
+    </fieldset>
+  </form>
+</body>
+</html>
