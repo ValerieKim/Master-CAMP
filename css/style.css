@@ -82,6 +82,13 @@ body{
 .header{
   background: lime;
 }
+/* 공통 안내링크 */
+.member{
+  background: yellow;
+  display: flex;
+  justify-content: flex-end;
+}
+
 /*공통 내비게이션*/
 .navigation{
   background: aqua;
@@ -132,7 +139,11 @@ body{
     background-color: rgba(0,0,255,0.5);
   }
   /* 모바일 헤더 */
-
+  /* 모바일 안내링크 */
+  .member a{
+    color: #fff;
+    margin-left: 1em;
+  }
   /* 모바일 내비게이션 */
 
   /* 모바일 메인 */
@@ -176,6 +187,17 @@ body{
   /* 데스크탑 헤더 */
   .header {
      /*vh=화면의 1/10만큼*/
+  }
+  /* 데스크탑 안내링크 */
+  .member{
+    position: relative;
+    right: -1em;
+  }
+  .member li:nth-child(-n+2)::after{
+    content: "|";
+  }
+  .member a{
+    padding: 0 1em;
   }
   /*데스크탑 내비게이션*/
   .nav-container {
