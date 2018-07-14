@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko-KR">
+<html lang="ko-KR" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>메인 - 웹카페</title>
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/modernizr-custom.js" defer></script>
   <script src="js/jquery.min.js" defer></script>
   <script src="js/menu.js" defer></script>
 </head>
@@ -20,11 +21,11 @@
         <li><a href="#">회원가입</a></li>
         <li><a href="#">커뮤니티</a></li> 
       </ul>
-      <form action="https://formspree.io/bebehuman@gmail.com" method="POST" class="search-form"> 
+      <form action="https://formspree.io/bebehuman@gmail.com" method="POST" class="search-form clearfix"> 
         <fieldset>
           <legend>검색 폼</legend>
-          <label for="search">검색어</label>
-          <input type="search" id="search" name="search"> <!--이름 수정해도 됨-->
+          <label for="search" class="a11y">검색어</label>
+          <input type="search" id="search" name="search">
           <button type="submit" class="btn-search">검색</button>
         </fieldset>
       </form>
