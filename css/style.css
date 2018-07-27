@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 /* 스타일 초기화 */
-h1, ul{
-  margin: 0;
-}
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -50,7 +46,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* 숨김 컨텐츠 */
+/* 숨김 콘텐츠 */
 legend, .a11y{
   position: absolute;
   width: 1px;
@@ -65,10 +61,10 @@ legend, .a11y{
   display: block;
   clear: both;
 }
-/* 하이퍼링크 스타일*/
+/* 하이퍼 링크 스타일 */
 a{
-color: inherit;
-text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 /* 본문 스타일 */
 html{
@@ -79,34 +75,31 @@ body{
   color: #181818;
   font-family: 'Noto Sans Regular', sans-serif;
 }
-
 /* 가상 요소를 활용한 그리드 설정 */
-/*body::after{
+/* body::after{
   content: "가상요소를 활용하여 추가한 텍스트";
   background: repeating-linear-gradient(to right, rgba(255,0,0,0.5), rgba(255,0,0,0.5) 65px, transparent 65px, transparent 85px),
-  repeating-linear-gradient(to bottom, rgba(0,0,255,0.5), rgba(0,0,255,0.5) 1px, transparent 1px, transparent 16px);
+              repeating-linear-gradient(to bottom, rgba(0,0,255,0.5), rgba(0,0,255,0.5) 1px, transparent 1px, transparent 16px);
   background-color: transparent;
   color: #fff;
   width: 1000px;
   height: 100vh;
   transform: translateX(-50%);
   position: absolute;
-  top: 0;
+  top:0;
   left: 50%;
-}*/
+} */
 /* 공통 레이아웃 */
 .header, .navigation, .main, .footer{
   width: 100%;
 }
-
-
-/* 공통 검색폼 */
+/* 공통 검색 폼 */
 input[name="search"]{
   border: 1px solid #aaa;
   border-radius: 3px;
   padding: 5px 5px 5px 10px;
 }
-/*공통 내비게이션*/
+/* 공통 내비게이션 */
 
 /* 공통 메인 */
 .main{
@@ -120,10 +113,10 @@ input[name="search"]{
   background: brown;
 }
 .board{
-  background:skyblue;
+  background: skyblue;
 }
 .favorite-site{
-  background:teal;
+  background: teal;
 }
 .twitter{
   background: tomato;
@@ -145,7 +138,7 @@ input[name="search"]{
     grid-template-rows: 100vh;
     grid-column-gap: 20px;
   }
-  .grid-show .grid-unit:nth-child(1),
+  .grid-show .grid-unit:nth-child(1), 
   .grid-show .grid-unit:nth-child(6){
     width: 0;
   }
@@ -179,19 +172,20 @@ input[name="search"]{
     color: #fff;
     margin-left: 1em;
   }
-  /* 모바일 검색폼 */
+  /* 모바일 검색 폼 */
   .search-form{
     padding-bottom: 10px;
   }
   .search-form fieldset{
     font-size: 0;
   }
-  input[name="search"]{
-    width: calc(100% - 40px);
+  .search-form *{
     font-size: 1.6rem;
   }
+  input[name="search"]{
+    width: calc(100% - 40px);
+  }
   .btn-search{
-    font-size: 1.6rem;
     position: relative;
     width: 30px;
     height: 30px;
@@ -212,23 +206,87 @@ input[name="search"]{
     background-size: 100% 100%;
   }
   /* 모바일 내비게이션 */
-
+  /* 모바일 메인 메뉴 제어 버튼 */
+  .btn-menu{
+    width: 30px;
+    height: 30px;
+    border: 0;
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    overflow: hidden;
+    cursor: pointer;
+    background: transparent;
+  }
+  .menubar{
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    background: #fff;
+    left: 0;
+    transition: all 200ms;
+  }
+  .menubar-top{
+    top: 0;
+  }
+  .menubar-middle{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .menubar-bottom{
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .btn-menu-act .menubar-top{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  .btn-menu-act .menubar-middle{
+    transform: translate(-100%, -50%);
+  }
+  .btn-menu-act .menubar-bottom{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  /* 모바일 메인 메뉴 */
+  .menu{
+    background: #000;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    padding: 20px;
+    transform: translateX(-100%);
+    transition: all 200ms;
+  }
+  .menu-act{
+    transform: translateX(0) !important;
+  }
+  .menu-item{
+    margin: 10px 0;
+  }
+  .sub-menu{
+    display: none;
+  }
+  .menu-item-act .sub-menu{
+    display: block !important;
+  }
+  .sub-menu li{
+    margin: 10px 0 10px 20px;
+  }
   /* 모바일 메인 */
   .main{
     display: flex;
     flex-direction: column;
+
   }
-  /*.main > *{
-    height: 10vh;
-    width: 50%;
-    flex-grow: 1;
-  }*/
   /* 모바일 푸터 */
 }
 
 
 @media screen and (min-width: 1000px) {
-
   /* 데스크탑 그리드 - 12col */
   .grid-show{
     position: absolute;
@@ -243,7 +301,8 @@ input[name="search"]{
   .grid-show .grid-unit{
     background-color: rgba(255,0,0,0.5);
   }
-  /* 웹카페 데스크탑 레이아웃*/
+
+  /* 웹카페 데스크탑 레이아웃 */
   .header,
   .navigation,
   .main,
@@ -255,13 +314,13 @@ input[name="search"]{
   .header{
     position: relative;
   }
-  /*.header {
-     display: grid;
-     grid-template-columns: repeat(12, 65px);
-     grid-template-rows: 50px 50px;
-     grid-column-gap: 20px;
-     align-items: center;
-  }*/
+  /* .header {
+    display: grid;
+    grid-template-columns: repeat(12, 65px);
+    grid-template-rows: 50px 50px;
+    grid-column-gap: 20px;
+    align-items: center;
+  } */
   /* 데스크탑 로고 */
   .logo{
     grid-column: 1 / span 3;
@@ -290,7 +349,7 @@ input[name="search"]{
     display: inline-block;
     padding: 10px 1em;
   }
-  /* 데스크탑 검색폼 */
+  /* 데스크탑 검색 폼 */
   .search-form{
     grid-column: 7 / span 6;
     grid-row: 2;
@@ -304,45 +363,65 @@ input[name="search"]{
     width: 400px;
   }
   .btn-search{
-    border:1px solid #aaa;
+    border: 1px solid #aaa;
     border-radius: 3px;
     background: #988574;
     color: #fff;
     padding: 5px 10px;
   }
-  /*데스크탑 내비게이션*/
+
+
+  /* 데스크탑 내비게이션 */
   .nav-container {
     background-color: #988574;
+    box-shadow: 0 -2px 5px 0 rgba(0,0,0,0.85), 0 2px 5px 0 rgba(0,0,0,0.85);
   }
-  .navigation {
-    
+  .btn-menu{
+    display: none;
   }
-  /*데스크탑 메인 콘텐츠*/
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 20px 0;
+  }
+  .menu-item-text{
+    font-size: 1.8rem;
+    font-family: "Noto Sans Bold";
+    text-shadow: 1px 0 0 #000, 0 1px 0 #000, -1px 0 0 #000, 0 -1px 0 #000;
+  }
+  .sub-menu li{
+    margin: 10px 0 0 20px;
+  }
+  /* 데스크탑 메인 콘텐츠 */
   .main {
     height: 70vh;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
   .main > *{
     flex: auto 0 1;
   }
-  .recommend-book {
+  .recommend-book{
     flex-basis: 320px;
   }
-  .news {
+  .news{
     flex-basis: 660px;
   }
-  .board {
+  .board{
     flex-basis: 320px;
   }
-  .favorite-site {
+  .favorite-site{
     flex-basis: 235px;
   }
-  .twitter {
+  .twitter{
     flex-basis: 405px;
   }
-  /*데스크탑 푸터*/
+
+
+
+  /* 데스크탑 푸터 */
   .footer-container {
     background-color: #988574;
   }
