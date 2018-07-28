@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>반응형 이미지</title>
+  <link rel="stylesheet" href="css/rwd-img.css">
+</head>
+<body>
+  <div class="rwd-img-container">
+    <img src="images/book_rwd.jpg" alt="" class="rwd-img">
+  </div>
+  <div class="rwd-img-container">
+    <img src="images/image-1x.png" alt="" class="rwd-img" 
+          srcset="images/image-1x.png 1x,
+                  images/image-2x.png 2x,
+                  images/image-3x.png 3x,
+                  images/image-4x.png 4x">
+  </div>
+  <div class="rwd-img-container">
+    <img src="images/normal.jpg" alt="" class="rwd-img" 
+          srcset="images/large.jpg 1024w,
+                  images/medium.jpg 800w,
+                  images/small.jpg 480w">
+  </div>
+  <div class="rwd-img-container">
+    <picture>
+      <source srcset="images/large.jpg" media="(min-width: 1000px)">
+      <source srcset="images/medium.jpg" media="(min-width: 481px) and (max-width: 999px)">
+      <source srcset="images/small.jpg" media="(max-width: 480px)">
+      <img src="images/normal.jpg" alt="" class="rwd-img">
+    </picture>
+  </div>
+</body>
+</html>
